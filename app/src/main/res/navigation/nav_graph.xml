@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaJuegosFragment">
+
+    <fragment
+        android:id="@+id/listaJuegosFragment"
+        android:name="com.example.proyecto.ListaJuegosFragment"
+        android:label="fragment_lista_juegos"
+        tools:layout="@layout/fragment_lista_juegos" >
+        <action
+            android:id="@+id/action_listaJuegosFragment_to_insertarJuegosFragment"
+            app:destination="@id/insertarJuegosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertarJuegosFragment"
+        android:name="com.example.proyecto.InsertarJuegosFragment"
+        android:label="fragment_insertar_juegos"
+        tools:layout="@layout/fragment_insertar_juegos" />
+</navigation>
