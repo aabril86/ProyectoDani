@@ -8,11 +8,13 @@ import androidx.room.Insert;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Juego.class}, version = 1)
+@Database(entities = {Juego.class}, version = 1, exportSchema = false)
 
 public abstract class AppBaseDeDatos extends RoomDatabase {
 
     private static volatile AppBaseDeDatos INSTANCE;
+
+    abstract AppDao obtenerJuegosDao();
 
     public static AppBaseDeDatos getInstance(final Context context){
         if (INSTANCE == null){
@@ -28,9 +30,9 @@ public abstract class AppBaseDeDatos extends RoomDatabase {
     }
 
     @Dao
-    abstract class AppDao {
+    interface AppDao {
 
         @Insert
-        abstract void  insertarJuego(Juego juego);
+        void  insertarJuego(Juego juego);
     }
 }

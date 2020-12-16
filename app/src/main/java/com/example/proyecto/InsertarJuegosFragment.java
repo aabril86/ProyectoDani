@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ public class InsertarJuegosFragment extends Fragment {
 
    FragmentInsertarJuegosBinding binding;
    private JuegosViewModel juegosViewModel;
+   Uri imagen;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +42,7 @@ public class InsertarJuegosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        NavController navController = Navigation.findNavController(view);
         juegosViewModel = new ViewModelProvider(requireActivity()).get(JuegosViewModel.class);
 
         binding.seleccionarPortada.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +57,21 @@ public class InsertarJuegosFragment extends Fragment {
         });
 
         juegosViewModel.imagenSeleccionada.observe(getViewLifecycleOwner(), uri -> {
-            Glide.with(requireView()).load(uri).into(binding.previsualizarPortada);
+
+            if(uri != null){
+                imagen = uri;
+                Glide.with(requireView()).load(uri).into(binding.previsualizarPortada);
+            }
+        });
+
+        binding.insertar.setOnClickListener(v -> {
+
+            String titulo = binding.titulo.getText().toString();
+            String anyo = binding.anyo.getText().toString();
+            juegosViewModel.insertar(titulo, anyo, imagen.toString());
+
+            navController.popBackStack();
+            juegosViewModel.establecerImagenSeleccionada(null);
         });
     }
 
