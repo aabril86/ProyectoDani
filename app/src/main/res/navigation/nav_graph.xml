@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listaJuegosFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/listaJuegosFragment"
@@ -19,4 +19,34 @@
         android:name="com.example.proyecto.InsertarJuegosFragment"
         android:label="fragment_insertar_juegos"
         tools:layout="@layout/fragment_insertar_juegos" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.proyecto.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.proyecto.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.proyecto.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
+    </fragment>
 </navigation>

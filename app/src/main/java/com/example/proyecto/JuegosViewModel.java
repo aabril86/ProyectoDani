@@ -10,7 +10,12 @@ import androidx.lifecycle.MutableLiveData;
 public class JuegosViewModel extends AndroidViewModel {
 
     private final JuegoStorage juegoStorage;
+
+    //imagen del insert
     MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
+
+    //del splash
+    MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
 
     public JuegosViewModel(@NonNull Application application) {
         super(application);
