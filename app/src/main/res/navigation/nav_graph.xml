@@ -48,5 +48,8 @@
         <action
             android:id="@+id/action_signUpFragment_to_listaJuegosFragment"
             app:destination="@id/listaJuegosFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
 </navigation>
