@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_logInFragment_to_listaJuegosFragment"
             app:destination="@id/listaJuegosFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_paginaPrincipalActivity"
+            app:destination="@id/paginaPrincipalActivity" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -52,4 +55,9 @@
             android:id="@+id/action_signUpFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+    <activity
+        android:id="@+id/paginaPrincipalActivity"
+        android:name="com.example.proyecto.PaginaPrincipalActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
 </navigation>
