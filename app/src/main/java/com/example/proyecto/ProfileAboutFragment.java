@@ -36,7 +36,7 @@ public class ProfileAboutFragment extends Fragment {
         binding.goToPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_nav_profile_about_to_nav_profile);
+//                navController.navigate(R.id.action_nav_profile_about_to_nav_profile);
             }
         });
     }

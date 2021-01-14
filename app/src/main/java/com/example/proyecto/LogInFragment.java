@@ -44,7 +44,7 @@ public class LogInFragment extends Fragment {
         binding.iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_logInFragment_to_paginaPrincipalActivity);
+                navController.navigate(R.id.action_logInFragment_to_listaJuegosFragment);
             }
         });
     }

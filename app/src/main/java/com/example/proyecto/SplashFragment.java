@@ -31,17 +31,6 @@ public class SplashFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_splash, container, false);
     }
 
-    //QUITAR LA ACTIONBAR EN ESTE FRAGMENT
-    @Override
-    public void onResume() {
-        super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-    @Override
-    public void onStop() {
-        super.onStop();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

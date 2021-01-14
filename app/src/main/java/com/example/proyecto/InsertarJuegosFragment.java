@@ -48,11 +48,7 @@ public class InsertarJuegosFragment extends Fragment {
         binding.seleccionarPortada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkSelfPermission(requireContext(), READ_EXTERNAL_STORAGE) == PERMISSION_GRANTED) {
-                    abrirGaleria();
-                } else {
-                    lanzadorPermisos.launch(READ_EXTERNAL_STORAGE);
-                }
+                lanzadorGaleria.launch("image/*");
             }
         });
 
@@ -75,20 +71,9 @@ public class InsertarJuegosFragment extends Fragment {
         });
     }
 
-    private final ActivityResultLauncher<String> lanzadorPermisos =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    abrirGaleria();
-                }
-            });
-
     private final ActivityResultLauncher<String> lanzadorGaleria =
             registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
-
                 juegosViewModel.establecerImagenSeleccionada(uri);
             });
 
-    private void abrirGaleria(){
-        lanzadorGaleria.launch("image/*");
-    }
 }
