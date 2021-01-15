@@ -5,7 +5,10 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import java.util.List;
 
 public class JuegosViewModel extends AndroidViewModel {
 
@@ -29,5 +32,9 @@ public class JuegosViewModel extends AndroidViewModel {
 
     void insertar(String titulo, String anyo, String imagen){
         juegoStorage.insertar(titulo, anyo, imagen);
+    }
+
+    LiveData<List<Juego>> obtenerJuegos(){
+        return juegoStorage.obtenerJuegos();
     }
 }
