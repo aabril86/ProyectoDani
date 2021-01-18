@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
-                R.id.listaJuegosFragment
+                R.id.listaJuegosFragment, R.id.profileFragment, R.id.savedFragment, R.id.forumFragment2, R.id.settingsFragment
         )
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
 
+        //TODO INTENTAR QUITAR EL DRAWER EN EL SPLASH/LOGIN/SIGN
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {

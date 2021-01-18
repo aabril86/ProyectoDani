@@ -57,7 +57,60 @@
     </fragment>
     <activity
         android:id="@+id/paginaPrincipalActivity"
-        android:name="com.example.proyecto.PaginaPrincipalActivity"
+        android:name="com.example.proyecto.MainActivity"
         android:label="app_bar_main"
         tools:layout="@layout/app_bar_main" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.proyecto.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileAboutFragment"
+            app:destination="@id/profileAboutFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileAboutFragment"
+        android:name="com.example.proyecto.ProfileAboutFragment"
+        android:label="fragment_profile_about"
+        tools:layout="@layout/fragment_profile_about" >
+        <action
+            android:id="@+id/action_profileAboutFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileAboutFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.proyecto.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.proyecto.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" />
+    <fragment
+        android:id="@+id/forumFragment2"
+        android:name="com.example.proyecto.ForumFragment"
+        android:label="fragment_forum"
+        tools:layout="@layout/fragment_forum" >
+        <action
+            android:id="@+id/action_forumFragment2_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.proyecto.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.example.proyecto.CreatePostFragment"
+        android:label="fragment_create_post"
+        tools:layout="@layout/fragment_create_post" />
 </navigation>

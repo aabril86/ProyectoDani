@@ -15,15 +15,15 @@ import android.view.ViewGroup;
 import com.example.proyecto.databinding.FragmentProfileAboutBinding;
 import com.example.proyecto.databinding.FragmentProfileBinding;
 
-public class ProfileAboutFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FragmentProfileAboutBinding binding;
+    private FragmentProfileBinding binding;
     private NavController navController;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (binding = FragmentProfileAboutBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentProfileBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -32,17 +32,17 @@ public class ProfileAboutFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.goToPosts.setOnClickListener(new View.OnClickListener() {
+        binding.goToAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_profileAboutFragment_to_profileFragment);
+                navController.navigate(R.id.action_profileFragment_to_profileAboutFragment);
             }
         });
 
         binding.goToEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_profileAboutFragment_to_editProfileFragment);
+                navController.navigate(R.id.action_profileFragment_to_editProfileFragment);
             }
         });
     }

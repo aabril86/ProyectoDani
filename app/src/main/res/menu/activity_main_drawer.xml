@@ -8,7 +8,27 @@
         <item
             android:id="@+id/listaJuegosFragment"
             android:icon="@drawable/ic_home_icon"
-            android:title="Lista de juegos" />
+            android:title="Home" />
+
+        <item
+            android:id="@+id/profileFragment"
+            android:icon="@drawable/ic_profile_person"
+            android:title="Profile"/>
+
+        <item
+            android:id="@+id/savedFragment"
+            android:icon="@drawable/controller_icon"
+            android:title="Saved"/>
+
+        <item
+            android:id="@+id/forumFragment2"
+            android:icon="@drawable/forum_icon"
+            android:title="Forum"/>
+
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings"/>
 
     </group>
 </menu>

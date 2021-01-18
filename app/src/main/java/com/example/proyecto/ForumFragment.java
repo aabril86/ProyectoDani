@@ -12,18 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.proyecto.databinding.FragmentForumBinding;
 import com.example.proyecto.databinding.FragmentProfileAboutBinding;
-import com.example.proyecto.databinding.FragmentProfileBinding;
 
-public class ProfileAboutFragment extends Fragment {
+public class ForumFragment extends Fragment {
 
-    private FragmentProfileAboutBinding binding;
+    private FragmentForumBinding binding;
     private NavController navController;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (binding = FragmentProfileAboutBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentForumBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -32,19 +32,11 @@ public class ProfileAboutFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.goToPosts.setOnClickListener(new View.OnClickListener() {
+        binding.goToCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_profileAboutFragment_to_profileFragment);
-            }
-        });
-
-        binding.goToEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_profileAboutFragment_to_editProfileFragment);
+                navController.navigate(R.id.action_forumFragment2_to_createPostFragment);
             }
         });
     }
-
 }
