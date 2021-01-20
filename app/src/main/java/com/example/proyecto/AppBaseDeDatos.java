@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Juego.class}, version = 3, exportSchema = false)
+@Database(entities = {Juego.class}, version = 4, exportSchema = false)
 
 public abstract class AppBaseDeDatos extends RoomDatabase {
 
@@ -60,11 +60,20 @@ public abstract class AppBaseDeDatos extends RoomDatabase {
 
         @Query("SELECT * FROM juego")
         LiveData<List<Juego>> obtenerJuegos();
+
+        @Query("SELECT * FROM juego WHERE year > 2018")
+        LiveData<List<Juego>> obtenerJuegosNuevos();
+
+        @Query("SELECT * FROM juego WHERE year < 2018")
+        LiveData<List<Juego>> obtenerJuegosPopulares();
+
     }
 
     static void insertarJuegosIniciales(AppDao appDao){
         executor.execute(() -> {
             appDao.insertarJuego(new Juego("Tetris", "1970", "file:///android_asset/tetris.jpg"));
+            appDao.insertarJuego(new Juego("Tetris11", "2018", "file:///android_asset/tetris.jpg"));
+            appDao.insertarJuego(new Juego("Tetris11", "2019", "file:///android_asset/tetris.jpg"));
         });
     }
 }

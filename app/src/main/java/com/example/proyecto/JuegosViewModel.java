@@ -34,7 +34,10 @@ public class JuegosViewModel extends AndroidViewModel {
         juegoStorage.insertar(titulo, anyo, imagen);
     }
 
-    LiveData<List<Juego>> obtenerJuegos(){
-        return juegoStorage.obtenerJuegos();
+    LiveData<List<Juego>> obtenerJuegosNuevos(){
+        return juegoStorage.obtenerJuegosNuevos();
+    }
+    LiveData<List<Juego>> obtenerJuegosPopulares(){
+        return juegoStorage.obtenerJuegosPopulares();
     }
 }

@@ -16,7 +16,8 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.proyecto.databinding.FragmentListaJuegosBinding;
-import com.example.proyecto.databinding.ViewholderJuegoBinding;
+import com.example.proyecto.databinding.ViewholdernewJuegoBinding;
+import com.example.proyecto.databinding.ViewholderpopularJuegoBinding;
 
 import java.util.List;
 
@@ -49,31 +50,37 @@ public class ListaJuegosFragment extends Fragment {
         });
 
 
-        AlbumsAdapter albumsAdapter = new AlbumsAdapter();
-        binding.recyclerView.setAdapter(albumsAdapter);
+        JuegosNewAdapter juegosNewAdapter = new JuegosNewAdapter();
+        binding.recyclerViewNew.setAdapter(juegosNewAdapter);
 
-        juegosViewModel.obtenerJuegos().observe(getViewLifecycleOwner(), albums -> {
-            albumsAdapter.setAlbumList(albums);
+        juegosViewModel.obtenerJuegosNuevos().observe(getViewLifecycleOwner(), albums -> {
+            juegosNewAdapter.setAlbumList(albums);
+        });
+
+        JuegosPopularAdapter juegosPopularesAdapter = new JuegosPopularAdapter();
+        binding.recyclerViewPopular.setAdapter(juegosPopularesAdapter);
+
+        juegosViewModel.obtenerJuegosPopulares().observe(getViewLifecycleOwner(), albums -> {
+            juegosPopularesAdapter.setAlbumList(albums);
         });
     }
 
 
-    class AlbumsAdapter extends RecyclerView.Adapter<AlbumViewHolder> {
+    class JuegosNewAdapter extends RecyclerView.Adapter<JuegoNewViewHolder> {
 
         List<Juego> albumList;
 
+
         @NonNull
         @Override
-        public AlbumViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new AlbumViewHolder(ViewholderJuegoBinding.inflate(getLayoutInflater(), parent, false));
+        public JuegoNewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new JuegoNewViewHolder(ViewholdernewJuegoBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
-        public void onBindViewHolder(@NonNull AlbumViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull JuegoNewViewHolder holder, int position) {
             Juego album = albumList.get(position);
 
-            holder.binding.titulo.setText(album.titulo);
-            holder.binding.anyo.setText(album.year);
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.portada);
         }
 
@@ -88,10 +95,52 @@ public class ListaJuegosFragment extends Fragment {
         }
     }
 
-    static class AlbumViewHolder extends RecyclerView.ViewHolder {
-        ViewholderJuegoBinding binding;
+    class JuegosPopularAdapter extends RecyclerView.Adapter<JuegoPopularViewHolder> {
 
-        public AlbumViewHolder(@NonNull ViewholderJuegoBinding binding) {
+        List<Juego> albumList;
+
+
+        @NonNull
+        @Override
+        public JuegoPopularViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new JuegoPopularViewHolder(ViewholderpopularJuegoBinding.inflate(getLayoutInflater(), parent, false));
+        }
+
+
+        @Override
+        public void onBindViewHolder(@NonNull JuegoPopularViewHolder holder, int position) {
+            Juego album = albumList.get(position);
+
+            holder.binding.gametitle.setText(album.titulo);
+            holder.binding.year.setText(album.year);
+            Glide.with(holder.itemView).load(album.imagen).into(holder.binding.gameicon);
+        }
+
+        @Override
+        public int getItemCount() {
+            return albumList == null ? 0 : albumList.size();
+        }
+
+        public void setAlbumList(List<Juego> albumList) {
+            this.albumList = albumList;
+            notifyDataSetChanged();
+        }
+    }
+
+
+    static class JuegoNewViewHolder extends RecyclerView.ViewHolder {
+        ViewholdernewJuegoBinding binding;
+
+        public JuegoNewViewHolder(@NonNull ViewholdernewJuegoBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+    }
+
+    static class JuegoPopularViewHolder extends RecyclerView.ViewHolder {
+        ViewholderpopularJuegoBinding binding;
+
+        public JuegoPopularViewHolder(@NonNull ViewholderpopularJuegoBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

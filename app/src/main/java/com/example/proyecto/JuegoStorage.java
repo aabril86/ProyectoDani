@@ -26,7 +26,10 @@ public class JuegoStorage {
 
     }
 
-    public LiveData<List<Juego>> obtenerJuegos() {
-        return appDao.obtenerJuegos();
+    public LiveData<List<Juego>> obtenerJuegosNuevos() {
+        return appDao.obtenerJuegosNuevos();
+    }
+    public LiveData<List<Juego>> obtenerJuegosPopulares() {
+        return appDao.obtenerJuegosPopulares();
     }
 }
