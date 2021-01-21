@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Juego.class}, version = 5, exportSchema = false)
+@Database(entities = {Juego.class}, version = 9, exportSchema = false)
 
 public abstract class AppBaseDeDatos extends RoomDatabase {
 
@@ -71,14 +71,16 @@ public abstract class AppBaseDeDatos extends RoomDatabase {
 
     static void insertarJuegosIniciales(AppDao appDao){
         executor.execute(() -> {
-            appDao.insertarJuego(new Juego("Tetris", "1970", "file:///android_asset/tetris.jpg"));
-            appDao.insertarJuego(new Juego("Tetris11", "2018", "file:///android_asset/tetris.jpg"));
-            appDao.insertarJuego(new Juego("Tetris11", "2019", "file:///android_asset/tetris.jpg"));
-            appDao.insertarJuego(new Juego("Rocket", "2019", "file:///android_asset/rocket_league_portada.png"));
-            appDao.insertarJuego(new Juego("Genshin", "2019", "file:///android_asset/genshin_impact_portada.png"));
-            appDao.insertarJuego(new Juego("Valorant", "2019", "file:///android_asset/valorant_portada.png"));
-            appDao.insertarJuego(new Juego("Warzone", "2019", "file:///android_asset/cod_portada.png"));
-            appDao.insertarJuego(new Juego("Runeterra", "2019", "file:///android_asset/runeterra_portada.png"));
+            appDao.insertarJuego(new Juego("Rocket", "2019", "PC","file:///android_asset/rocket_league_portada.png"));
+            appDao.insertarJuego(new Juego("Genshin", "2019", "PC","file:///android_asset/genshin_impact_portada.png"));
+            appDao.insertarJuego(new Juego("Valorant", "2019", "PC",  "file:///android_asset/valorant_portada.png"));
+            appDao.insertarJuego(new Juego("Warzone", "2019", "PC","file:///android_asset/cod_portada.png"));
+            appDao.insertarJuego(new Juego("Runeterra", "2019", "PC", "file:///android_asset/runeterra_portada.png"));
+            appDao.insertarJuego(new Juego("CSGO", "2016", "Steam", "file:///android_asset/icon_csgo.png"));
+            appDao.insertarJuego(new Juego("Fortnite", "2017", "Epic", "file:///android_asset/icon_fortnite.png"));
+            appDao.insertarJuego(new Juego("DOTA", "2016", "Steam", "file:///android_asset/icon_dota.png"));
+            appDao.insertarJuego(new Juego("Path of Exile", "2015", "Steam", "file:///android_asset/icon_poe.png"));
+            appDao.insertarJuego(new Juego("League of Legends", "2015", "/", "file:///android_asset/icon_lol.png"));
         });
     }
 }

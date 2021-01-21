@@ -30,8 +30,8 @@ public class JuegosViewModel extends AndroidViewModel {
         imagenSeleccionada.setValue(uri);
     }
 
-    void insertar(String titulo, String anyo, String imagen){
-        juegoStorage.insertar(titulo, anyo, imagen);
+    void insertar(String titulo, String anyo, String plataforma, String imagen){
+        juegoStorage.insertar(titulo, anyo, plataforma, imagen);
     }
 
     LiveData<List<Juego>> obtenerJuegosNuevos(){

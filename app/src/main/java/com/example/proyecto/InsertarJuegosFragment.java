@@ -64,7 +64,8 @@ public class InsertarJuegosFragment extends Fragment {
 
             String titulo = binding.titulo.getText().toString();
             String anyo = binding.anyo.getText().toString();
-            juegosViewModel.insertar(titulo, anyo, imagen.toString());
+            String plataforma = binding.plataforma.getText().toString();
+            juegosViewModel.insertar(titulo, anyo, plataforma ,imagen.toString());
 
             navController.popBackStack();
             juegosViewModel.establecerImagenSeleccionada(null);

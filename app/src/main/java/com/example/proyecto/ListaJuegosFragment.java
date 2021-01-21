@@ -112,7 +112,7 @@ public class ListaJuegosFragment extends Fragment {
             Juego album = albumList.get(position);
 
             holder.binding.gametitle.setText(album.titulo);
-            holder.binding.year.setText(album.year);
+            holder.binding.plataforma.setText(album.plataforma);
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.gameicon);
         }
 
