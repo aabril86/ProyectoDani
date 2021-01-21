@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Juego.class}, version = 4, exportSchema = false)
+@Database(entities = {Juego.class}, version = 5, exportSchema = false)
 
 public abstract class AppBaseDeDatos extends RoomDatabase {
 
@@ -74,6 +74,11 @@ public abstract class AppBaseDeDatos extends RoomDatabase {
             appDao.insertarJuego(new Juego("Tetris", "1970", "file:///android_asset/tetris.jpg"));
             appDao.insertarJuego(new Juego("Tetris11", "2018", "file:///android_asset/tetris.jpg"));
             appDao.insertarJuego(new Juego("Tetris11", "2019", "file:///android_asset/tetris.jpg"));
+            appDao.insertarJuego(new Juego("Rocket", "2019", "file:///android_asset/rocket_league_portada.png"));
+            appDao.insertarJuego(new Juego("Genshin", "2019", "file:///android_asset/genshin_impact_portada.png"));
+            appDao.insertarJuego(new Juego("Valorant", "2019", "file:///android_asset/valorant_portada.png"));
+            appDao.insertarJuego(new Juego("Warzone", "2019", "file:///android_asset/cod_portada.png"));
+            appDao.insertarJuego(new Juego("Runeterra", "2019", "file:///android_asset/runeterra_portada.png"));
         });
     }
 }
