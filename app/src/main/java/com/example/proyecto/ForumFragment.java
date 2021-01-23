@@ -38,5 +38,33 @@ public class ForumFragment extends Fragment {
                 navController.navigate(R.id.action_forumFragment2_to_createPostFragment);
             }
         });
+
+        binding.post1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_forumFragment2_to_postFragment);
+            }
+        });
+
+        binding.post2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_forumFragment2_to_postFragment);
+            }
+        });
+
+        binding.post3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_forumFragment2_to_postFragment);
+            }
+        });
+
+        binding.post4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_forumFragment2_to_postFragment);
+            }
+        });
     }
 }
