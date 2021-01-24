@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         navHeaderMainBinding = NavHeaderMainBinding.bind(binding.navView.getHeaderView(0));
 
         setSupportActionBar(binding.toolbar);
-
+        
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
                 R.id.listaJuegosFragment, R.id.profileFragment, R.id.savedFragment, R.id.forumFragment2, R.id.settingsFragment
