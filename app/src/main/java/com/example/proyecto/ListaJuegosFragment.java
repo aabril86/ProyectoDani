@@ -13,6 +13,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toolbar;
@@ -23,6 +25,7 @@ import com.example.proyecto.databinding.ViewholdernewJuegoBinding;
 import com.example.proyecto.databinding.ViewholderpopularJuegoBinding;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ListaJuegosFragment extends Fragment {
 
@@ -32,8 +35,10 @@ public class ListaJuegosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return (binding = FragmentListaJuegosBinding.inflate(inflater, container, false)).getRoot();
+
     }
 
     @Override

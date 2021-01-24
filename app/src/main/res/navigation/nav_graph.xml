@@ -130,4 +130,9 @@
         android:name="com.example.proyecto.ReviewFragment"
         android:label="fragment_review"
         tools:layout="@layout/fragment_review" />
+    <fragment
+        android:id="@+id/juegoFragment"
+        android:name="com.example.proyecto.JuegoFragment"
+        android:label="fragment_juego"
+        tools:layout="@layout/fragment_juego" />
 </navigation>
