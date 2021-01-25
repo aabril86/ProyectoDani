@@ -10,17 +10,17 @@
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Titulo"/>
+        android:hint="@string/titulo"/>
     <EditText
         android:id="@+id/anyo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Año"/>
+        android:hint="@string/a_o"/>
     <EditText
         android:id="@+id/plataforma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Plataforma"/>
+        android:hint="@string/plataforma"/>
     <Button
         android:id="@+id/seleccionarPortada"
         android:layout_width="wrap_content"
@@ -34,5 +34,5 @@
         android:id="@+id/insertar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INSERTAR"/>
+        android:text="@string/insertar"/>
 </LinearLayout>
