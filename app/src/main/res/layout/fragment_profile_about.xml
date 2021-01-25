@@ -110,52 +110,56 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/nametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="468dp"
         android:text="@string/name_wade"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/surnametext"
+        app:layout_constraintTop_toBottomOf="@id/goToPosts"/>
 
     <TextView
+        android:id="@+id/surnametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="524dp"
         android:text="@string/surname_warren"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/emailtext"
+        app:layout_constraintTop_toBottomOf="@id/nametext"/>
 
 
     <TextView
+        android:id="@+id/emailtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="576dp"
         android:text="@string/email_warren_outlook_com"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/abouttext"
+        app:layout_constraintTop_toBottomOf="@id/surnametext"/>
 
     <TextView
+        android:id="@+id/abouttext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="628dp"
         android:text="@string/about_me_gaming_reading"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailtext"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

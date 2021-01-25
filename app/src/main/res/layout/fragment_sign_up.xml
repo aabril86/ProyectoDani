@@ -134,13 +134,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:background="@drawable/roundedbutton"
+        android:backgroundTint="#00D1FF"
         android:text="SIGN UP"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmedit"
-        android:backgroundTint="#00D1FF"/>
+        app:layout_constraintTop_toBottomOf="@id/confirmedit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@
     tools:context=".ForumFragment">
 
     <TextView
+        android:id="@+id/welcometext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -16,40 +17,46 @@
         android:textSize="25sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/forumtext"/>
 
     <TextView
+        android:id="@+id/forumtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+
         android:text="@string/forum"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/welcometext"
+        app:layout_constraintBottom_toTopOf="@id/goToCreate"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goToCreate"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/roundedbutton"
         android:text="@string/create"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forumtext"
+        app:layout_constraintBottom_toTopOf="@id/scrollview"
         android:backgroundTint="#00D1FF"/>
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="465dp"
-        android:layout_marginTop="248dp"
-        app:layout_constraintRight_toLeftOf="parent"
+        android:layout_marginTop="45dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goToCreate">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

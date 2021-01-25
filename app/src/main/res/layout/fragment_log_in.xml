@@ -9,6 +9,7 @@
 
 
     <TextView
+        style="@style/TextCustom"
         android:id="@+id/welcometext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
