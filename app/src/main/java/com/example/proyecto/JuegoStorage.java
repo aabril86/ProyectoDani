@@ -17,11 +17,9 @@ public class JuegoStorage {
         appDao = AppBaseDeDatos.getInstance(application).obtenerJuegosDao();
     }
 
-    void insertar(String titulo, String anyo, String plataforma, String imagen){
+    void insertar(String titulo, String anyo, String plataforma, String imagen ){
         executor.execute(()->{
             appDao.insertarJuego(new Juego(titulo, anyo, plataforma, imagen));
-
-
         });
 
     }

@@ -20,6 +20,9 @@ public class JuegosViewModel extends AndroidViewModel {
     //del splash
     MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
 
+    //Para el juegoFragment
+    MutableLiveData<Juego> juegoSeleccionado = new MutableLiveData<>();
+
     public JuegosViewModel(@NonNull Application application) {
         super(application);
 
@@ -33,6 +36,9 @@ public class JuegosViewModel extends AndroidViewModel {
     void insertar(String titulo, String anyo, String plataforma, String imagen){
         juegoStorage.insertar(titulo, anyo, plataforma, imagen);
     }
+    void seleccionar (Juego juego){
+        juegoSeleccionado.setValue(juego);
+    }
 
     LiveData<List<Juego>> obtenerJuegosNuevos(){
         return juegoStorage.obtenerJuegosNuevos();
@@ -40,4 +46,6 @@ public class JuegosViewModel extends AndroidViewModel {
     LiveData<List<Juego>> obtenerJuegosPopulares(){
         return juegoStorage.obtenerJuegosPopulares();
     }
+
+    MutableLiveData<Juego> seleccionado() { return juegoSeleccionado; }
 }

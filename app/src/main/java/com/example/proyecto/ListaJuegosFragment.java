@@ -29,8 +29,9 @@ import java.util.Objects;
 
 public class ListaJuegosFragment extends Fragment {
 
-    FragmentListaJuegosBinding binding;
+    private FragmentListaJuegosBinding binding;
     private JuegosViewModel juegosViewModel;
+    private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +47,7 @@ public class ListaJuegosFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //AQUI VA EL CODIGO
-        NavController navController = Navigation.findNavController(view);
+        navController = Navigation.findNavController(view);
 
         juegosViewModel = new ViewModelProvider(this).get(JuegosViewModel.class);
 
@@ -90,6 +91,11 @@ public class ListaJuegosFragment extends Fragment {
             Juego album = albumList.get(position);
 
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.portada);
+
+            holder.itemView.setOnClickListener(v -> {
+                juegosViewModel.juegoSeleccionado.setValue(album);
+                navController.navigate(R.id.juegoFragment);
+            });
         }
 
         @Override
@@ -122,6 +128,11 @@ public class ListaJuegosFragment extends Fragment {
             holder.binding.gametitle.setText(album.titulo);
             holder.binding.plataforma.setText(album.plataforma);
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.gameicon);
+
+            holder.itemView.setOnClickListener(v -> {
+                juegosViewModel.juegoSeleccionado.setValue(album);
+                navController.navigate(R.id.juegoFragment);
+            });
         }
 
         @Override
@@ -153,4 +164,5 @@ public class ListaJuegosFragment extends Fragment {
             this.binding = binding;
         }
     }
+
 }
