@@ -15,8 +15,9 @@ public class Juego {
     String imagen;
     String plataforma;
     String banner;
+    String url;
 
-    public Juego(String titulo, String year, String desarrollador, String descripcion, String plataforma, String imagen, String banner) {
+    public Juego(String titulo, String year, String desarrollador, String descripcion, String plataforma, String imagen, String banner, String url) {
         this.titulo = titulo;
         this.year = year;
         this.desarrollador = desarrollador;
@@ -24,6 +25,7 @@ public class Juego {
         this.plataforma = plataforma;
         this.imagen = imagen;
         this.banner = banner;
+        this.url = url;
     }
 
     public Juego(String titulo, String anyo, String plataforma, String imagen) {
