@@ -16,7 +16,7 @@ import com.example.proyecto.databinding.FragmentCreatePostBinding;
 
 public class CreatePostFragment extends Fragment {
 
-    private FragmentCreatePostBinding binding;
+    private com.example.proyecto.databinding.FragmentCreatePostBinding binding;
     NavController navController;
 
     @Nullable
