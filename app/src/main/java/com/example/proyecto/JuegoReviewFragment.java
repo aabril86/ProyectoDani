@@ -1,7 +1,5 @@
 package com.example.proyecto;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,22 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.example.proyecto.databinding.FragmentJuegoBinding;
-
-import java.util.concurrent.atomic.AtomicReference;
+import com.example.proyecto.databinding.FragmentJuegoReviewBinding;
 
 
-public class JuegoFragment extends Fragment {
+public class JuegoReviewFragment extends Fragment {
 
-    private FragmentJuegoBinding binding;
+    private FragmentJuegoReviewBinding binding;
     private NavController navController;
     private JuegosViewModel juegosViewModel;
-    private String url;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (binding = FragmentJuegoBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentJuegoReviewBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -40,33 +35,16 @@ public class JuegoFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
         juegosViewModel = new ViewModelProvider(requireActivity()).get(JuegosViewModel.class);
+
         juegosViewModel.seleccionado().observe(getViewLifecycleOwner(), juego -> {
-            binding.descripcionjuego.setText(juego.descripcion);
-            binding.platform.setText(juego.plataforma);
-            binding.fecha.setText(juego.year);
-            binding.developer.setText(juego.desarrollador);
-            Glide.with(requireView()).load(juego.imagen).into(binding.portadajuego);
             Glide.with(requireView()).load(juego.banner).into(binding.bannerjuego);
-            url = juego.url;
         });
 
-        binding.goToUrl.setOnClickListener(new View.OnClickListener() {
+        binding.general.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                navController.navigate(R.id.action_juegoReviewFragment_to_juegoFragment);
             }
         });
-
-        binding.reviews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_juegoFragment_to_juegoReviewFragment);
-            }
-        });
-
-
     }
-
 }

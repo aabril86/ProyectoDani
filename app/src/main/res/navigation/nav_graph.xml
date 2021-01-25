@@ -138,5 +138,18 @@
         android:id="@+id/juegoFragment"
         android:name="com.example.proyecto.JuegoFragment"
         android:label="fragment_juego"
-        tools:layout="@layout/fragment_juego" />
+        tools:layout="@layout/fragment_juego" >
+        <action
+            android:id="@+id/action_juegoFragment_to_juegoReviewFragment"
+            app:destination="@id/juegoReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/juegoReviewFragment"
+        android:name="com.example.proyecto.JuegoReviewFragment"
+        android:label="fragment_juego_review"
+        tools:layout="@layout/fragment_juego_review" >
+        <action
+            android:id="@+id/action_juegoReviewFragment_to_juegoFragment"
+            app:destination="@id/juegoFragment" />
+    </fragment>
 </navigation>
