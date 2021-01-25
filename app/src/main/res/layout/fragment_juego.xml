@@ -78,73 +78,73 @@
         android:id="@+id/releasetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="195dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="35dp"
         android:text="@string/release_date"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/fecha"
-        app:layout_constraintTop_toBottomOf="@id/portadajuego" />
+        app:layout_constraintTop_toBottomOf="@id/portadajuego"
+        app:layout_constraintBottom_toTopOf="@id/developertext"/>
 
 
     <TextView
         android:id="@+id/fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="8dp"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@id/releasetext"
-        app:layout_constraintTop_toBottomOf="@id/descripcionjuego" />
+        app:layout_constraintTop_toBottomOf="@id/portadajuego"
+        app:layout_constraintBottom_toTopOf="@id/developer"/>
 
     <TextView
         android:id="@+id/developertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="35dp"
         android:text="@string/developer"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/releasetext" />
+        app:layout_constraintTop_toBottomOf="@id/releasetext"
+        app:layout_constraintBottom_toTopOf="@id/platformtext"/>
 
     <TextView
         android:id="@+id/developer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:textSize="15sp"
         android:textColor="@color/white"
         app:layout_constraintLeft_toRightOf="@id/developertext"
-        app:layout_constraintTop_toBottomOf="@id/fecha"/>
+        app:layout_constraintTop_toBottomOf="@id/fecha"
+        app:layout_constraintBottom_toTopOf="@id/platform"/>
 
     <TextView
         android:id="@+id/platformtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="35dp"
         android:text="@string/platform"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/developertext"/>
+        app:layout_constraintTop_toBottomOf="@id/developertext"
+        app:layout_constraintBottom_toTopOf="@id/goToUrl"/>
 
     <TextView
         android:id="@+id/platform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@id/platformtext"
-        app:layout_constraintTop_toBottomOf="@id/developer" />
+        app:layout_constraintTop_toBottomOf="@id/developer"
+        app:layout_constraintBottom_toTopOf="@id/goToUrl"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goToUrl"
@@ -154,10 +154,8 @@
         android:backgroundTint="#00D1FF"
         android:text="@string/get_the_game"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintTop_toBottomOf="@id/platform"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
