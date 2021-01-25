@@ -10,187 +10,154 @@
     <ImageView
         android:id="@+id/bannerjuego"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="209dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/general"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="16dp"
         android:text="General"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@id/reviews"
+        app:layout_constraintTop_toBottomOf="@id/bannerjuego" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/reviews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="16dp"
         android:text="Reviews"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="0.773"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/general"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/descripcionjuego"
-        android:layout_width="220dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="336dp"
-        android:autoSizeTextType="uniform"
-        android:textColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.869"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/portadajuego"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/coso2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="524dp"
-        android:text="Release date:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="524dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintLeft_toRightOf="@id/coso2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/coso4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="596dp"
-        android:text="Platform:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/platform"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="596dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintLeft_toRightOf="@id/coso4"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/bannerjuego" />
 
     <ImageView
         android:id="@+id/portadajuego"
         android:layout_width="107dp"
         android:layout_height="159dp"
-        android:layout_marginTop="308dp"
-        app:layout_constraintHorizontal_bias="0.125"
+        android:layout_marginTop="28dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@id/description"
+        app:layout_constraintTop_toBottomOf="@id/general" />
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="24dp"
         android:text="Description"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.537"
+        android:textSize="20dp"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/portadajuego"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/reviews" />
 
     <TextView
-        android:id="@+id/coso3"
+        android:id="@+id/descripcionjuego"
+        android:layout_width="188dp"
+        android:layout_height="130dp"
+        android:textColor="@color/white"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/portadajuego" />
+
+    <TextView
+        android:id="@+id/releasetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="195dp"
+        android:layout_marginStart="25dp"
+        android:text="Release date:"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/fecha"
+        app:layout_constraintTop_toBottomOf="@id/portadajuego" />
+
+
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/releasetext"
+        app:layout_constraintTop_toBottomOf="@id/descripcionjuego" />
+
+    <TextView
+        android:id="@+id/developertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
         android:text="Developer:"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.12"
+        android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/releasetext" />
 
     <TextView
         android:id="@+id/developer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginRight="264dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/coso3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toRightOf="@id/developertext"
+        app:layout_constraintTop_toBottomOf="@id/fecha"/>
 
     <TextView
-        android:id="@+id/coso1"
+        android:id="@+id/platformtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="488dp"
-        android:text="About the game:"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Platform:"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.143"
+        android:textSize="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/developertext"/>
 
     <TextView
-        android:id="@+id/aboutgame"
+        android:id="@+id/platform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintLeft_toRightOf="@id/coso1"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toRightOf="@id/platformtext"
+        app:layout_constraintTop_toBottomOf="@id/developer" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goToUrl"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="648dp"
         android:background="@drawable/roundedbutton"
+        android:backgroundTint="#00D1FF"
         android:text="GET THE GAME"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="#00D1FF"/>
+        app:layout_constraintVertical_bias="0.942" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

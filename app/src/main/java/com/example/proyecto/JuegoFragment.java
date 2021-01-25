@@ -1,5 +1,6 @@
 package com.example.proyecto;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -37,7 +38,6 @@ public class JuegoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
-
         juegosViewModel = new ViewModelProvider(requireActivity()).get(JuegosViewModel.class);
 
         juegosViewModel.seleccionado().observe(getViewLifecycleOwner(), juego -> {
@@ -45,10 +45,11 @@ public class JuegoFragment extends Fragment {
             binding.platform.setText(juego.plataforma);
             binding.fecha.setText(juego.year);
             binding.developer.setText(juego.desarrollador);
-
             Glide.with(requireView()).load(juego.imagen).into(binding.portadajuego);
+            Glide.with(requireView()).load(juego.banner).into(binding.bannerjuego);
 
         });
+
     }
 
 }
