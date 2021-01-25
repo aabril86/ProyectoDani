@@ -11,13 +11,19 @@ public class Juego {
     String titulo;
     String year;
     String desarrollador;
+    String descripcion;
     String imagen;
     String plataforma;
 
-    public Juego(String titulo, String year, String plataforma, String imagen) {
+    public Juego(String titulo, String year, String desarrollador, String descripcion, String plataforma, String imagen) {
         this.titulo = titulo;
         this.year = year;
+        this.desarrollador = desarrollador;
+        this.descripcion = descripcion;
         this.plataforma = plataforma;
         this.imagen = imagen;
+    }
+
+    public Juego(String titulo, String anyo, String plataforma, String imagen) {
     }
 }
