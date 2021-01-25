@@ -43,6 +43,8 @@ public class JuegoFragment extends Fragment {
         juegosViewModel.seleccionado().observe(getViewLifecycleOwner(), juego -> {
             binding.descripcionjuego.setText(juego.titulo);
             binding.aboutgame.setText(juego.plataforma);
+            Glide.with(requireView()).load(juego.imagen).into(binding.portadajuego);
+
         });
     }
 

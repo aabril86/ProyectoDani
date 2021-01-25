@@ -49,7 +49,7 @@ public class ListaJuegosFragment extends Fragment {
         //AQUI VA EL CODIGO
         navController = Navigation.findNavController(view);
 
-        juegosViewModel = new ViewModelProvider(this).get(JuegosViewModel.class);
+        juegosViewModel = new ViewModelProvider(requireActivity()).get(JuegosViewModel.class);
 
         binding.irAInsertarJuegos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +93,7 @@ public class ListaJuegosFragment extends Fragment {
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.portada);
 
             holder.itemView.setOnClickListener(v -> {
-                juegosViewModel.juegoSeleccionado.setValue(album);
+                juegosViewModel.seleccionar(album);
                 navController.navigate(R.id.juegoFragment);
             });
         }
@@ -130,7 +130,7 @@ public class ListaJuegosFragment extends Fragment {
             Glide.with(holder.itemView).load(album.imagen).into(holder.binding.gameicon);
 
             holder.itemView.setOnClickListener(v -> {
-                juegosViewModel.juegoSeleccionado.setValue(album);
+                juegosViewModel.seleccionar(album);
                 navController.navigate(R.id.juegoFragment);
             });
         }
