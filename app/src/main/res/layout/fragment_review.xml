@@ -44,6 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="460dp"
@@ -52,10 +53,33 @@
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:textColor="@color/white"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#549CDE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/non"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommend"/>
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/non"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:textColor="@color/white"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#EE6464"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/yes"
+        app:layout_constraintTop_toBottomOf="@id/recommend"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

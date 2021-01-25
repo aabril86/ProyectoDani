@@ -35,35 +35,35 @@ public class SavedFragment extends Fragment {
         binding.dota2Saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
 
         binding.poeSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
 
         binding.rocketSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
 
         binding.valorantSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
 
         binding.codSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
     }
