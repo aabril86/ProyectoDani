@@ -1,8 +1,9 @@
 package com.example.proyecto;
 
-import android.app.ActionBar;
-import android.app.Notification;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,20 +13,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toolbar;
-
 import com.bumptech.glide.Glide;
 import com.example.proyecto.databinding.FragmentListaJuegosBinding;
 import com.example.proyecto.databinding.ViewholdernewJuegoBinding;
 import com.example.proyecto.databinding.ViewholderpopularJuegoBinding;
 
 import java.util.List;
-import java.util.Objects;
+
 
 public class ListaJuegosFragment extends Fragment {
 
@@ -54,8 +48,9 @@ public class ListaJuegosFragment extends Fragment {
         binding.irAInsertarJuegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_listaJuegosFragment_to_insertarJuegosFragment);
+
             }
+
         });
 
 
@@ -164,5 +159,6 @@ public class ListaJuegosFragment extends Fragment {
             this.binding = binding;
         }
     }
+
 
 }

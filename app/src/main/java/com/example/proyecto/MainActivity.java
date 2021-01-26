@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.proyecto.databinding.ActivityMainBinding;
 import com.example.proyecto.databinding.NavHeaderMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -63,5 +64,6 @@ public class MainActivity extends AppCompatActivity {
         // Cargar nombre de usuario y foto en el Header del Drawer
         navHeaderMainBinding.usuario.setText("Wade Warren");
         Glide.with(this).load(R.drawable.profile_image).circleCrop().into(navHeaderMainBinding.fotoUsuario);
+
     }
 }

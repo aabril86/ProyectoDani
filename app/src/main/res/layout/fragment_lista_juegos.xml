@@ -8,10 +8,12 @@
     tools:context=".ListaJuegosFragment">
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.factor.bouncy.BouncyRecyclerView
         android:id="@+id/recyclerViewPopular"
         android:layout_width="match_parent"
         android:layout_height="290dp"
+        app:recyclerview_fling_animation_size=".7"
+        app:recyclerview_overscroll_animation_size=".7"
         android:layout_marginTop="348dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
