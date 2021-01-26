@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.proyecto.databinding.FragmentReviewBinding;
+import com.kusu.loadingbutton.LoadingButton;
 
 public class ReviewFragment extends Fragment {
 
@@ -34,14 +36,43 @@ public class ReviewFragment extends Fragment {
         binding.non.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_reviewFragment_to_savedFragment);
+
+                LoadingButton loadingButton = (binding.non); loadingButton.showLoading();
+                new CountDownTimer(3000, 1000){
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        loadingButton.hideLoading();
+                        navController.navigate(R.id.action_reviewFragment_to_savedFragment);
+                    }
+                }.start();
             }
         });
 
         binding.yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_reviewFragment_to_savedFragment);
+
+                LoadingButton loadingButton = (binding.yes); loadingButton.showLoading();
+                new CountDownTimer(3000, 1000){
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        loadingButton.hideLoading();
+                        navController.navigate(R.id.action_reviewFragment_to_savedFragment);
+                    }
+                }.start();
+
             }
         });
     }

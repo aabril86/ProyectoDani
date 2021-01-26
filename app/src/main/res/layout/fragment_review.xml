@@ -55,7 +55,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.kusu.loadingbutton.LoadingButton
         android:id="@+id/yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recommend"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.kusu.loadingbutton.LoadingButton
         android:id="@+id/non"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,6 +80,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/yes"
         app:layout_constraintTop_toBottomOf="@id/recommend"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

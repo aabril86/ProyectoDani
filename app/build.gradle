@@ -64,4 +64,7 @@ dependencies {
     //cosa de google
     implementation 'com.github.TutorialsAndroid:GButton:v1.0.19'
 
+    //loadingbutton
+    implementation 'com.github.koushikcse:LoadingButton:1.7'
+
 }

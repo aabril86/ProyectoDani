@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.proyecto.databinding.FragmentEditProfileBinding;
+import com.kusu.loadingbutton.LoadingButton;
 
 
 public class EditProfileFragment extends Fragment {
@@ -32,10 +34,24 @@ public class EditProfileFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.openSave.setOnClickListener(new View.OnClickListener() {
+        binding.save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_editProfileFragment_to_profileFragment);
+                LoadingButton loadingButton = (binding.save); loadingButton.showLoading();
+
+                new CountDownTimer(3000, 1000){
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        loadingButton.hideLoading();
+                        navController.navigate(R.id.action_editProfileFragment_to_profileFragment);
+                    }
+                }.start();
             }
         });
     }

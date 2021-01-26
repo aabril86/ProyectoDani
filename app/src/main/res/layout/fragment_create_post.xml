@@ -94,7 +94,7 @@
         app:layout_constraintBottom_toTopOf="@id/createpost"
         app:layout_constraintTop_toBottomOf="@id/tagtext"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.kusu.loadingbutton.LoadingButton
         android:id="@+id/createpost"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
