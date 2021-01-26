@@ -47,5 +47,12 @@ public class SignUpFragment extends Fragment {
                 navController.navigate(R.id.action_signUpFragment_to_logInFragment);
             }
         });
+
+        binding.google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signUpFragment_to_listaJuegosFragment);
+            }
+        });
     }
 }
