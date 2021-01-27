@@ -2,9 +2,11 @@ package com.example.proyecto;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -15,6 +17,8 @@ import android.view.View;
 import com.bumptech.glide.Glide;
 import com.example.proyecto.databinding.ActivityMainBinding;
 import com.example.proyecto.databinding.NavHeaderMainBinding;
+
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
 
         navHeaderMainBinding = NavHeaderMainBinding.bind(binding.navView.getHeaderView(0));
-
         setSupportActionBar(binding.toolbar);
-
-        getSupportActionBar().setTitle("FREEKEYS");
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
@@ -42,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         NavigationUI.setupWithNavController(binding.navView, navController);
-        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
+        //NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
+        getSupportActionBar().setTitle("     Home");
+        getSupportActionBar().setLogo(R.drawable.ic_hamburguer);
 
 
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {

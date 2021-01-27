@@ -30,7 +30,6 @@ public class ListaJuegosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         return (binding = FragmentListaJuegosBinding.inflate(inflater, container, false)).getRoot();
 
@@ -45,13 +44,13 @@ public class ListaJuegosFragment extends Fragment {
 
         juegosViewModel = new ViewModelProvider(requireActivity()).get(JuegosViewModel.class);
 
-        binding.irAInsertarJuegos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-
-        });
+//        binding.irAInsertarJuegos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//
+//        });
 
 
         JuegosNewAdapter juegosNewAdapter = new JuegosNewAdapter();
