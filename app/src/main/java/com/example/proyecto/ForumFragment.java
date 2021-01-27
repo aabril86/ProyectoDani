@@ -66,5 +66,12 @@ public class ForumFragment extends Fragment {
                 navController.navigate(R.id.action_forumFragment2_to_postFragment);
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_forumFragment2_to_listaJuegosFragment);
+            }
+        });
     }
 }

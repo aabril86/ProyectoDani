@@ -54,5 +54,12 @@ public class EditProfileFragment extends Fragment {
                 }.start();
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_editProfileFragment_to_profileFragment);
+            }
+        });
     }
 }

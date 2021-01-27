@@ -45,6 +45,13 @@ public class ProfileAboutFragment extends Fragment {
                 navController.navigate(R.id.action_profileAboutFragment_to_editProfileFragment);
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_profileAboutFragment_to_listaJuegosFragment);
+            }
+        });
     }
 
 }

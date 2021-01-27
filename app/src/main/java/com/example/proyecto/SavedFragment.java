@@ -66,5 +66,12 @@ public class SavedFragment extends Fragment {
                 navController.navigate(R.id.action_savedFragment_to_reviewFragment);
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_savedFragment_to_listaJuegosFragment);
+            }
+        });
     }
 }

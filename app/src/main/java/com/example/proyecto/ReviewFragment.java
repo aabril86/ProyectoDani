@@ -75,5 +75,12 @@ public class ReviewFragment extends Fragment {
 
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_reviewFragment_to_savedFragment);
+            }
+        });
     }
 }

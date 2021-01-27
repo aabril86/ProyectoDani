@@ -52,5 +52,12 @@ public class CreatePostFragment extends Fragment {
                 }.start();
             }
         });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_createPostFragment_to_forumFragment2);
+            }
+        });
     }
 }

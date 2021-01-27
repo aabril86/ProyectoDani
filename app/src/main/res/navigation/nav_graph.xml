@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_profileFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileAboutFragment"
@@ -83,12 +86,19 @@
         <action
             android:id="@+id/action_profileAboutFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileAboutFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.proyecto.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
+    </fragment>
     <fragment
         android:id="@+id/savedFragment"
         android:name="com.example.proyecto.SavedFragment"
@@ -97,6 +107,9 @@
         <action
             android:id="@+id/action_savedFragment_to_reviewFragment"
             app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_savedFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
     <fragment
         android:id="@+id/forumFragment2"
@@ -109,6 +122,9 @@
         <action
             android:id="@+id/action_forumFragment2_to_postFragment"
             app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_forumFragment2_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -118,6 +134,9 @@
         <action
             android:id="@+id/action_editProfileFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileAboutFragment"
+            app:destination="@id/profileAboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/createPostFragment"
@@ -150,6 +169,9 @@
         <action
             android:id="@+id/action_juegoFragment_to_juegoReviewFragment"
             app:destination="@id/juegoReviewFragment" />
+        <action
+            android:id="@+id/action_juegoFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
     <fragment
         android:id="@+id/juegoReviewFragment"
@@ -159,5 +181,8 @@
         <action
             android:id="@+id/action_juegoReviewFragment_to_juegoFragment"
             app:destination="@id/juegoFragment" />
+        <action
+            android:id="@+id/action_juegoReviewFragment_to_listaJuegosFragment"
+            app:destination="@id/listaJuegosFragment" />
     </fragment>
 </navigation>

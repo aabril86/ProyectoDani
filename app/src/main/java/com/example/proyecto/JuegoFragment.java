@@ -11,12 +11,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.proyecto.databinding.FragmentJuegoBinding;
+import com.kusu.loadingbutton.LoadingButton;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -63,6 +65,32 @@ public class JuegoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_juegoFragment_to_juegoReviewFragment);
+            }
+        });
+
+        binding.arrowback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_juegoFragment_to_listaJuegosFragment);
+            }
+        });
+
+        binding.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoadingButton loadingButton = (binding.add); loadingButton.showLoading();
+                new CountDownTimer(3000, 1000){
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        loadingButton.hideLoading();
+                    }
+                }.start();
             }
         });
 

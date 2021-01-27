@@ -45,13 +45,22 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
 
-        //TODO INTENTAR QUITAR EL DRAWER EN EL SPLASH/LOGIN/SIGN
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 if (destination.getId() == R.id.splashFragment
                         || destination.getId() == R.id.logInFragment
-                        || destination.getId() == R.id.signUpFragment) {
+                        || destination.getId() == R.id.signUpFragment
+                        || destination.getId() == R.id.juegoFragment
+                        || destination.getId() == R.id.juegoReviewFragment
+                        || destination.getId() == R.id.profileFragment
+                        || destination.getId() == R.id.profileAboutFragment
+                        || destination.getId() == R.id.editProfileFragment
+                        || destination.getId() == R.id.savedFragment
+                        || destination.getId() == R.id.reviewFragment
+                        || destination.getId() == R.id.forumFragment2
+                        || destination.getId() == R.id.createPostFragment
+                        || destination.getId() == R.id.settingsFragment) {
                     binding.toolbar.setVisibility(View.GONE);
                     binding.navView.setVisibility(View.GONE);
                 } else {
